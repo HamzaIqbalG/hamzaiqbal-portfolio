@@ -1,16 +1,16 @@
 /*---------------------HOME PAGE SECTION---------------------------*/
 /*--------------------------------------------------------------*/
 
-body{
+body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
 }
+
 /* Navigation */
 nav {
   background-color: #000;
   color: #fff;
 }
-
 
 .container {
   display: flex;
@@ -23,12 +23,13 @@ nav {
   height: 40px;
 }
 
-.logo-text{
+.logo-text {
   display: flex;
   align-items: center;
-  flex:1;
+  flex: 1;
 }
-.logo-text h3{
+
+.logo-text h3 {
   margin: 0;
   margin-left: 7px;
 }
@@ -58,19 +59,60 @@ nav a {
   font-weight: bold;
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  /* Styles for small devices */
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
+  
+  .nav-links {
+    flex: 1 0 100%;
+    justify-content: center;
+  }
+  
+  nav li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Styles for medium devices */
+  .container {
+    padding: 15px;
+  }
+  
+  nav li {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Styles for large devices */
+  .container {
+    padding: 20px;
+  }
+}
+
+
+
 /* Slideshow */
 .slideshow-container {
   position: relative;
 }
 
 #slideshow img {
-  width: 1536px;
-  height:400px;
-  
+  max-width: 100%;
+  height: auto;
 }
 
-/*slideshow button controls*/
-
+/* Slideshow button controls */
 #slideshow-controls {
   display: flex;
   justify-content: center;
@@ -78,7 +120,7 @@ nav a {
 }
 
 .slideshow-button {
-  background: none; /* or background: transparent; */
+  background: none;
   border: none;
   cursor: pointer;
   font-size: 24px;
@@ -86,6 +128,37 @@ nav a {
   padding: 8px;
   margin: 0 4px;
   transition: opacity 0.3s;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  /* Styles for small devices */
+  #slideshow img {
+    height: auto;
+    width: 100%;
+  }
+
+  .slideshow-button {
+    font-size: 18px;
+    padding: 6px;
+    margin: 0 2px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Styles for medium devices */
+  #slideshow img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Styles for large devices */
+  #slideshow img {
+    height: 400px;
+    width: auto;
+  }
 }
 
 

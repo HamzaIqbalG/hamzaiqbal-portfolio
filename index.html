@@ -8,6 +8,26 @@
     <!--this is where we can add external resources the webpage will be using. We will also connect css to html here and add the title of the page here-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/play-stop-o.css"
+      rel="stylesheet"
+    />
+
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/play-button-o.css' rel='stylesheet'> <!--play button-->
+
+    <!--pause button-->
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/arrow-long-right-l.css"
+      rel="stylesheet"
+    />
+    <!--next arrow-->
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/arrow-long-left.css"
+      rel="stylesheet"
+    />
+    <!--prev arrow-->
+
     <link
       rel="clipboard icon"
       href="This PC/Documents/Projects/personal-website/clipboard-logo.ico"
@@ -22,40 +42,51 @@
       <nav>
         <div class="container">
           <div class="logo">
-            <a href="#"><img src="logo-website.ico" alt="Logo"></a>
+            <a href="#"><img src="logo-website.ico" alt="Logo" /></a>
           </div>
           <div class="logo-text">
-            <h3>Hamza Iqbal</h3>
+            <h3>Full Name</h3>
           </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About me</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Soccer</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About me</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Soccer</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
       </nav>
     </header>
-    
 
     <main>
       <section>
         <div id="slideshow">
           <img id="slideshow-image" src="" alt="Slideshow Image" />
+          <div id="slideshow-controls">
+            <button id="prev-button" class="slideshow-button">
+              <i class="gg-arrow-long-left"></i>
+            </button>
+            <button id="pause-button" class="slideshow-button">
+              <i class="gg-play-stop-o"></i>
+            </button>
+            <button id="next-button" class="slideshow-button">
+              <i class="gg-arrow-long-right-l"></i>
+            </button>
+          </div>
         </div>
       </section>
 
       <section>
         <div id="textbox1">
-          <h3>Hi, welcome to my website. I have made it for fun as a project where I get to expand my skills</h3>
+          <h3>
+            Hi, welcome to my website. I have made it for fun as a project where
+            I get to expand my skills
+          </h3>
         </div>
       </section>
     </main>
 
-    <footer>
-
-    </footer>
+    <footer></footer>
 
     <script src="script.js"></script>
     <!--added at the end of body so the website has enough time to render the html and css part first-->

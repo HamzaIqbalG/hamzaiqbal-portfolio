@@ -1,2 +1,2 @@
 # hamzaiqbal-portfolio
-My personal website where I will be showcasing the projects I have worked on and my future goals. If you want to see how the website looks, simply download the index.html file and run it on your computer
+My personal website where I will be showcasing the projects I have worked on and my future goals. Index.html, style.css, and script.js are the files that have the code for the website

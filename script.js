@@ -1,67 +1,73 @@
 //Home page section//
 //----------------------------------------------------------------------------------------------//
+
 var currentImage = 0;
 var images = [
-  "extra_images/scenery1.jpg",
-  "extra_images/scenery2.jpg",
-  "extra_images/scenery3.jpg"
+  "extra_images/welcomeMessage.jpg",
+  "extra_images/WelcomeMessage2.jpg"
 ];
 var slideInterval;
 var isPaused = false;
 
 function slideImage() {
   var img = document.getElementById("slideshow-image");
-  img.style.transform = "translateX(-100%)"; // Start the slide animation
-  img.style.transition = "transform 1s ease-in-out"; // Set the transition duration
+  if (!img) return; // Check if the element exists
+  
+  img.style.transform = "translateX(-100%)";
+  img.style.transition = "transform 1s ease-in-out";
 
   setTimeout(function() {
     img.src = images[currentImage];
-    img.style.transform = "translateX(0)"; // Reset the position after the animation
+    img.style.transform = "translateX(0)";
     currentImage = (currentImage + 1) % images.length;
-  }, 1000); // Delay changing the image to 1000 milliseconds (1 second)
+  }, 1000);
 }
 
 function startSlideShow() {
   slideImage();
-  slideInterval = setInterval(slideImage, 5000); // Slide every 5 seconds
+  slideInterval = setInterval(slideImage, 5000);
 }
 
 function pauseSlideShow() {
   var pauseButton = document.getElementById("pause-button");
+  if (!pauseButton) return; // Check if the element exists
+  
   if (isPaused) {
     isPaused = false;
-    slideInterval = setInterval(slideImage, 5000); // Resume the slideshow
-    pauseButton.innerHTML = '<i class="gg-play-stop-o"></i>'; // Display play-stop icon
+    slideInterval = setInterval(slideImage, 5000);
+    pauseButton.innerHTML = '<i class="gg-play-stop-o"></i>';
   } else {
     isPaused = true;
-    clearInterval(slideInterval); // Pause the slideshow
-    pauseButton.innerHTML = '<i class="gg-play-button-o"></i>'; // Display play button icon
+    clearInterval(slideInterval);
+    pauseButton.innerHTML = '<i class="gg-play-button-o"></i>';
   }
 }
 
 function prevImage() {
-  currentImage = (currentImage - 1 + images.length) % images.length; // Move to the previous image
+  if (images.length <= 1) return; // Check if there are more than one images
+  currentImage = (currentImage - 1 + images.length) % images.length;
   var img = document.getElementById("slideshow-image");
-  img.src = images[currentImage];
+  if (img) img.src = images[currentImage];
 }
 
 function nextImage() {
-  currentImage = (currentImage + 1) % images.length; // Move to the next image
+  if (images.length <= 1) return; // Check if there are more than one images
+  currentImage = (currentImage + 1) % images.length;
   var img = document.getElementById("slideshow-image");
-  img.src = images[currentImage];
+  if (img) img.src = images[currentImage];
 }
 
 window.addEventListener("load", function() {
-  startSlideShow(); // Start the slideshow on page load
+  startSlideShow();
 
   var prevButton = document.getElementById("prev-button");
-  prevButton.addEventListener("click", prevImage); // Add event listener for previous button
+  if (prevButton) prevButton.addEventListener("click", prevImage);
 
   var pauseButton = document.getElementById("pause-button");
-  pauseButton.addEventListener("click", pauseSlideShow); // Add event listener for pause button
+  if (pauseButton) pauseButton.addEventListener("click", pauseSlideShow);
 
   var nextButton = document.getElementById("next-button");
-  nextButton.addEventListener("click", nextImage); // Add event listener for next button
+  if (nextButton) nextButton.addEventListener("click", nextImage);
 });
 
 

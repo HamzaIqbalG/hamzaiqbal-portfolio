@@ -163,6 +163,56 @@ nav a {
 
 
 
+/*footer*/
+footer {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.container2 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px; /* Adjust the font size as desired */
+}
+
+
+#linkedin {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Add margin-top for spacing */
+}
+
+#linkedin a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#linkedin svg {
+  width: 24px; /* Adjust the width to your desired size */
+  height: 24px; /* Adjust the height to your desired size */
+  fill: #ffffff; /* Adjust the fill color */
+  margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

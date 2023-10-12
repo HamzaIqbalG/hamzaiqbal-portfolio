@@ -3,8 +3,8 @@
 
 var currentImage = 0;
 var images = [
-  "extra_images/welcomeMessage2.jpg",
-  "extra_images/WelcomeMessage.jpg"
+  "extra_images/welcomeMessage.jpg",
+  "extra_images/WelcomeMessage2.jpg"
 ];
 var slideInterval;
 var isPaused = false;
@@ -13,20 +13,42 @@ function slideImage() {
   var img = document.getElementById("slideshow-image");
   if (!img) return; // Check if the element exists
   
-  img.style.transform = "translateX(-100%)";
-  img.style.transition = "transform 1s ease-in-out";
-
-  setTimeout(function() {
-    img.src = images[currentImage];
-    img.style.transform = "translateX(0)";
-    currentImage = (currentImage + 1) % images.length;
-  }, 1000);
+  // Directly update the src attribute without transition
+  img.src = images[currentImage];
+  currentImage = (currentImage + 1) % images.length;
 }
 
 function startSlideShow() {
-  slideImage();
+  // Initialize slideInterval with a call to slideImage
   slideInterval = setInterval(slideImage, 5000);
+  slideImage();  // Call slideImage once to initialize the slideshow
 }
+
+
+
+
+
+
+
+
+// function slideImage() {
+//   var img = document.getElementById("slideshow-image");
+//   if (!img) return; // Check if the element exists
+  
+//   img.style.transform = "translateX(-100%)";
+//   img.style.transition = "transform 1s ease-in-out";
+
+//   setTimeout(function() {
+//     img.src = images[currentImage];
+//     img.style.transform = "translateX(0)";
+//     currentImage = (currentImage + 1) % images.length;
+//   }, 1000);
+// }
+
+// function startSlideShow() {
+//   slideImage();
+//   slideInterval = setInterval(slideImage, 5000);
+// }
 
 function pauseSlideShow() {
   var pauseButton = document.getElementById("pause-button");
@@ -69,19 +91,6 @@ window.addEventListener("load", function() {
   var nextButton = document.getElementById("next-button");
   if (nextButton) nextButton.addEventListener("click", nextImage);
 });
-
-var testImg1 = new Image();
-testImg1.src = 'extra_images/welcomeMessage.jpg';
-testImg1.onload = function() { console.log('Image 1 loaded successfully'); };
-testImg1.onerror = function() { console.error('Error loading Image 1'); };
-
-var testImg2 = new Image();
-testImg2.src = 'extra_images/welcomeMessage2.jpg';
-testImg2.onload = function() { console.log('Image 2 loaded successfully'); };
-testImg2.onerror = function() { console.error('Error loading Image 2'); };
-
-
-
 //--------------------------------------------------------------------------------------------//
 
 

@@ -12,9 +12,20 @@ var isPaused = false;
 function slideImage() {
   var img = document.getElementById("slideshow-image");
   if (!img) return; // Check if the element exists
-  
-  // Directly update the src attribute without transition
+
+  // Log the current image index and the corresponding image source
+  console.log('Current image index:', currentImage);
+  console.log('Current image source:', images[currentImage]);
+
   img.src = images[currentImage];
+  img.onload = function() {
+      console.log('Image loaded:', images[currentImage]);
+  };
+  img.onerror = function() {
+      console.error('Error loading image:', images[currentImage]);
+  };
+
+  // Increment the index for the next image
   currentImage = (currentImage + 1) % images.length;
 }
 

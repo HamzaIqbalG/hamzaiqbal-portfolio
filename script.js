@@ -70,6 +70,16 @@ window.addEventListener("load", function() {
   if (nextButton) nextButton.addEventListener("click", nextImage);
 });
 
+var testImg1 = new Image();
+testImg1.src = 'extra_images/welcomeMessage.jpg';
+testImg1.onload = function() { console.log('Image 1 loaded successfully'); };
+testImg1.onerror = function() { console.error('Error loading Image 1'); };
+
+var testImg2 = new Image();
+testImg2.src = 'extra_images/welcomeMessage2.jpg';
+testImg2.onload = function() { console.log('Image 2 loaded successfully'); };
+testImg2.onerror = function() { console.error('Error loading Image 2'); };
+
 
 
 //--------------------------------------------------------------------------------------------//

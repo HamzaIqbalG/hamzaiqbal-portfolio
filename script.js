@@ -3,8 +3,8 @@
 
 var currentImage = 0;
 var images = [
-  "extra_images/welcomeMessage.jpg",
-  "extra_images/WelcomeMessage2.jpg"
+  "extra_images/welcomeMessage2.jpg",
+  "extra_images/WelcomeMessage.jpg"
 ];
 var slideInterval;
 var isPaused = false;
